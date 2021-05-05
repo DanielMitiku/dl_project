@@ -7,6 +7,42 @@ Our methodology involves training and validating a variational autoencoder using
 - Pytorch
 
 
+## Model
+```bash
+    BetaVAE_H(
+        (encoder): Sequential(
+            (0): Conv2d(3, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (1): ReLU(inplace=True)
+            (2): Conv2d(32, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (3): ReLU(inplace=True)
+            (4): Conv2d(32, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (5): ReLU(inplace=True)
+            (6): Conv2d(64, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (7): ReLU(inplace=True)
+            (8): Conv2d(64, 256, kernel_size=(4, 4), stride=(1, 1))
+            (9): ReLU(inplace=True)
+            (10): View()
+            (11): Linear(in_features=256, out_features=20, bias=True)
+        )
+        (decoder): Sequential(
+            (0): Linear(in_features=10, out_features=256, bias=True)
+            (1): View()
+            (2): ReLU(inplace=True)
+            (3): ConvTranspose2d(256, 64, kernel_size=(4, 4), stride=(1, 1))
+            (4): ReLU(inplace=True)
+            (5): ConvTranspose2d(64, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (6): ReLU(inplace=True)
+            (7): ConvTranspose2d(64, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (8): ReLU(inplace=True)
+            (9): ConvTranspose2d(32, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+            (10): ReLU(inplace=True)
+            (11): ConvTranspose2d(32, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        )
+    )
+```
+
+
+
 ## Authors
 
 - Abdul-Kazeem Shamba (Andrew_id - ashamba)
