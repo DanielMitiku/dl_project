@@ -41,6 +41,9 @@ Our methodology involves training and validating a variational autoencoder using
     )
 ```
 
+## Results
+
+<img src="./results.png">
 
 
 ## Authors
